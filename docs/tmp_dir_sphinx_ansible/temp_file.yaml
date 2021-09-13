@@ -1,0 +1,15 @@
+- hosts: localhost
+  tasks:
+    - command: ls /tmp/foo/BAR
+      name: ansible_task-documentos/segundo_documento-11-0
+    
+    - name: ansible_task-documentos/segundo_documento-27-1
+      set_fact:
+        admin: alejandro
+    
+    - debug:
+        msg:
+        - '{% if admin == ''adrian'' %} Bienvenido admin {{admin}} {% else %} No cuentas
+          con los permisos suficientes {% endif %}'
+      name: ansible_task-documentos/segundo_documento-27-2
+    
